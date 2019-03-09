@@ -1,3 +1,4 @@
+use log::error;
 use std::cmp;
 use std::fs::File;
 use std::io::{Error, ErrorKind, Read, Result};
@@ -5,8 +6,8 @@ use std::path::Path;
 
 use super::parser;
 use super::{Document, Object, ObjectId};
-use object_stream::ObjectStream;
-use xref::XrefEntry;
+use crate::object_stream::ObjectStream;
+use crate::xref::XrefEntry;
 
 impl Document {
 	/// Load PDF document from specified file path.
@@ -101,7 +102,7 @@ impl Reader {
 							self.document.objects.insert(object_id, object);
 						}
 						Err(err) => {
-							println!("{:?}", err);
+							error!("{:?}", err);
 						}
 					}
 				}

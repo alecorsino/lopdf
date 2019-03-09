@@ -1,6 +1,6 @@
 [package]
 name = "lopdf"
-version = "0.19.0"
+version = "0.20.0"
 authors = ["Junfeng Liu <china.liujunfeng@gmail.com>"]
 homepage = "https://github.com/J-F-Liu/lopdf"
 documentation = "https://docs.rs/crate/lopdf/"
@@ -8,6 +8,7 @@ repository = "https://github.com/J-F-Liu/lopdf.git"
 license = "MIT"
 readme = "README.md"
 description = "A Rust library for PDF document manipulation."
+edition = "2018"
 
 [dependencies]
 pom = "3.0.0"
@@ -19,6 +20,7 @@ itoa = "0.3.1"
 encoding = "0.2"
 image = { version = "0.20.0", optional = true }
 chrono = { version = "0.3.0", optional = true }
+log = "0.4.6"
 
 [features]
 default = ["chrono_time"]
